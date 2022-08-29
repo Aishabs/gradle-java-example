@@ -18,8 +18,7 @@ pipeline {
         stage('Validate') {
             steps {
                 
-                sh "./gradlew validate"
-
+                sh "chmod +x gradlew"
                 sh "./gradlew clean"
 
             }
