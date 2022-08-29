@@ -17,7 +17,7 @@ pipeline {
     stages {
         stage('Validate') {
             steps {
-                sh "chmod +x gradlew"
+                sh "./gradlew validate"
                 sh "./gradlew clean"
             }
         }
@@ -32,23 +32,9 @@ pipeline {
             steps {
                 sh "./gradlew test"
             }
-            //post{
-            //    always{
-            //        junit '**/target/surefire-reports/TEST-*.xml'
-            //    }
-            //}
+            
         }
 
-        //stage('Quality Scan'){
-        //    steps {
-        //       sh '''
-        //            mvn clean verify sonar:sonar \
-        //            -Dsonar.projectKey=java-mshaikh \
-        //            -Dsonar.host.url=http://$SONAR_IP \
-        //            -Dsonar.login=$SONAR_TOKEN
-        //        '''
-        //    }
-        //}
         stage('Package') {
             steps {
                 sh "./gradlew jar"
