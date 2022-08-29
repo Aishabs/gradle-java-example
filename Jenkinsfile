@@ -8,8 +8,8 @@ pipeline {
 
         AWS_S3_BUCKET = "gradle-java"
         ARTIFACT_NAME = "hello-world.jar"
-        AWS_EB_APP_NAME = "Gradle java"
-        AWS_EB_ENVIRONMENT = "Gradlejava-env"
+        AWS_EB_APP_NAME = "java-Gradle-11"
+        AWS_EB_ENVIRONMENT = "Javagradle11-env"
 		AWS_EB_APP_VERSION = "${BUILD_ID}"
                
     }
